@@ -1,6 +1,8 @@
 import re
 import textwrap
 
+from . import exceptions
+
 
 class Translator:
     # https://ru.wikipedia.org/wiki/Римские_цифры#Регулярные_выражения
@@ -27,12 +29,6 @@ class Translator:
         'CM': 200,
     }
 
-    class TranslatorError(Exception):
-        pass
-
-    class NumeralsAreNotRomansError(TranslatorError):
-        pass
-
     @staticmethod
     def translate_to_arabic(roman_numerals: str) -> int:
         Translator.__ensure_is_roman(roman_numerals)
@@ -53,7 +49,7 @@ class Translator:
     def __ensure_is_roman(numerals: str) -> None:
         if not Translator.is_roman(numerals):
             message = f'Numerals should match pattern {Translator.ROMAN_REGEX.pattern}'
-            raise Translator.NumeralsAreNotRomansError(message)
+            raise exceptions.NumeralsAreNotRomansError(message)
 
     @staticmethod
     def __chunked(string: str) -> 'list[str]':
