@@ -38,7 +38,6 @@ class Translator:
         Translator.__ensure_is_roman(roman_numerals)
 
         result = 0
-
         for chunk in Translator.__chunked(roman_numerals):
             for symbol in chunk:
                 result += Translator.__ADDITION_RULES[symbol]
