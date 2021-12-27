@@ -3,3 +3,9 @@
 # roman2arabic
 
 Python package designed to convert Roman numerals to Arabic numbers
+
+## Usage
+
+```bash
+python3 -m roman2arabic translate --roman <numeral>
+```
