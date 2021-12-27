@@ -1,5 +1,4 @@
 from roman2arabic.translator import Translator
-
 from roman2arabic import exceptions
 
 
