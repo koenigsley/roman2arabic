@@ -3,7 +3,7 @@ import unittest
 from roman2arabic.translator import Translator
 
 
-class MyTestCase(unittest.TestCase):
+class TranslatorTestCase(unittest.TestCase):
     def test_should_translate_MMIX_2009(self):
         self.assertEqual(2009, Translator.translate_to_arabic('MMIX'))
 
