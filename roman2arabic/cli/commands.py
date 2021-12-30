@@ -1,10 +1,8 @@
 from roman2arabic.translator import Translator
-from roman2arabic import exceptions
+from .handlers import catch_translator_error
 
 
+@catch_translator_error
 def translate(roman_numerals: str) -> None:
-    try:
-        arabic_numbers = Translator.translate_to_arabic(roman_numerals)
-        print(arabic_numbers)
-    except exceptions.TranslatorError as ex:
-        print(ex)
+    arabic_numbers = Translator.translate_to_arabic(roman_numerals)
+    print(arabic_numbers)
