@@ -4,7 +4,7 @@ from roman2arabic.translator import Translator
 
 
 class TranslatorTestCase(unittest.TestCase):
-    def test_should_translate_MMIX_2009(self):
+    def test_should_translate_MMIX_to_2009(self):
         self.assertEqual(2009, Translator.translate_to_arabic('MMIX'))
 
     def test_should_translate_XLIII_to_43(self):
